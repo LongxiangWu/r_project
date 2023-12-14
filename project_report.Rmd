@@ -29,7 +29,7 @@ data(london_marathon, package = "LondonMarathon")
 
 ## Introduction
 
-## The London Marathon
+*The London Marathon*
 
 The London Marathon, or the TCS London Marathon, is a truly special event that brings people from all walks of life together. It was the brainchild of visionaries Chris Brasher and John Disley back in 1981 and has since become the UK's second-largest annual road race, second only to the famous Great North Run in Newcastle.
 
@@ -50,24 +50,22 @@ The data seems to have been collected over the years, possibly sourced from offi
 
 <https://en.wikipedia.org/wiki/London_Marathon>
 
-
 Now, let's dive into the details of the marathon with the comprehensive data:
 
-<hr style="border: 2px solid black;">
-
-
-
-*Winners Data*
-{r}
-#remotes::install_github("nrennie/LondonMarathon")
+#### *Winners Data*
+```{r}#remotes::install_github("nrennie/LondonMarathon")
 data(winners, package = "LondonMarathon")
 head(winners)
+```
 
 
-*London Marathon Data*
-{r}
+
+#### *London Marathon Data*
+```{r}
 data(london_marathon, package = "LondonMarathon")
 head(london_marathon)
+```
+
 
 
 
@@ -266,7 +264,7 @@ kable(winner_men)
 
 #### The athlete who achieved the fastest time in the Women's category
 ```{r}
-min_Ttime_women <- min(filter(winners, Category == "Women")$Time)
+min_time_women <- min(filter(winners, Category == "Women")$Time)
 winner_women <- filter(winners, Time == min_time_women & Category == "Women")[, c("Category", "Year", "Athlete", "Nationality", "Time")]
 kable(winner_women)
 ```
